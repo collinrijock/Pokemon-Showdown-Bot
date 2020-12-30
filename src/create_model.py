@@ -20,7 +20,7 @@ if __name__ == "__main__":
     env_player = SimpleRLPlayer(battle_format="gen8randombattle")
     n_action = len(env_player.action_space)
     model = Sequential()
-    model.add(Dense(128, activation="elu", input_shape=(1, 12)))
+    model.add(Dense(128, activation="elu", input_shape=(12, 8)))
     model.add(Flatten())
     model.add(Dense(64, activation="elu"))
     model.add(Dense(n_action, activation="linear"))
