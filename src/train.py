@@ -25,7 +25,7 @@ def dqn_training(player, dqn, nb_steps):
 if __name__ == "__main__":
     env_player = SimpleRLPlayer(battle_format="gen8randombattle")
     opponent = MaxDamagePlayer(battle_format="gen8randombattle")
-    model = tf.keras.models.load_model('models/v1')
+    model = tf.keras.models.load_model('models/v2')
     memory = SequentialMemory(limit=10000, window_length=1)
 
     # Simple epsilon greedy
@@ -60,4 +60,4 @@ if __name__ == "__main__":
         env_algorithm_kwargs={"dqn": dqn, "nb_steps": NB_TRAINING_STEPS},
     )
     print("Training Complete")
-    model.save("models/v1")
+    model.save("models/v2")

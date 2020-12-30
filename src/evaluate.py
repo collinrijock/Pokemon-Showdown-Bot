@@ -37,7 +37,7 @@ if __name__ == "__main__":
     # Output dimension
     n_action = len(env_player.action_space)
 
-    model = tf.keras.models.load_model('models/v1')
+    model = tf.keras.models.load_model('models/v2')
 
     memory = SequentialMemory(limit=10000, window_length=1)
 
